@@ -2,7 +2,7 @@
 # stub: ruby-saml 0.8.1 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "ruby-saml"
+  s.name = "ruby-saml-frozen-081"
   s.version = "0.8.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=

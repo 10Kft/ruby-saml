@@ -3,7 +3,7 @@ require "uuid"
 require "onelogin/ruby-saml/logging"
 
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
   include REXML
     class Authrequest < SamlMessage
 

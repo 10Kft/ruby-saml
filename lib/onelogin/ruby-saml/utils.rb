@@ -1,5 +1,5 @@
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class Utils
       def self.format_cert(cert, heads=true)
         cert = cert.delete("\n").delete("\r").delete("\x0D")

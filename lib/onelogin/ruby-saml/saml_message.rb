@@ -5,7 +5,7 @@ require "rexml/document"
 require "rexml/xpath"
 
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class SamlMessage
       include REXML
 

@@ -1,5 +1,5 @@
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class Settings
       def initialize(overrides = {})
         config = DEFAULTS.merge(overrides)
@@ -79,7 +79,7 @@ module OneLogin
       def get_sp_cert
         cert = nil
         if self.certificate
-          formated_cert = OneLogin::RubySaml::Utils.format_cert(self.certificate)
+          formated_cert = OneLogin::RubySamlFrozen081::Utils.format_cert(self.certificate)
           cert = OpenSSL::X509::Certificate.new(formated_cert)
         end
         cert
@@ -88,7 +88,7 @@ module OneLogin
       def get_sp_key
         private_key = nil
         if self.private_key
-          formated_private_key = OneLogin::RubySaml::Utils.format_private_key(self.private_key)
+          formated_private_key = OneLogin::RubySamlFrozen081::Utils.format_private_key(self.private_key)
           private_key = OpenSSL::PKey::RSA.new(formated_private_key)
         end
         private_key

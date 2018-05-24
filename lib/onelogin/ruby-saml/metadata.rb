@@ -9,7 +9,7 @@ require "onelogin/ruby-saml/logging"
 # IdP administrator.  The IdP will poll the URL and your settings
 # will be updated automatically
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     include REXML
     class Metadata
       def generate(settings)

@@ -1,5 +1,5 @@
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class AttributeService
       attr_reader :attributes
       attr_reader :name

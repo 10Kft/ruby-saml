@@ -3,7 +3,7 @@ require "uuid"
 require "onelogin/ruby-saml/logging"
 
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class SloLogoutresponse < SamlMessage
 
       attr_reader :uuid # Can be obtained if neccessary

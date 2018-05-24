@@ -4,7 +4,7 @@ require 'nokogiri'
 
 # Only supports SAML 2.0
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class SloLogoutrequest < SamlMessage
       attr_reader :options
       attr_reader :request

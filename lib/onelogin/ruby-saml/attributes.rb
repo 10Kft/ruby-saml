@@ -1,5 +1,5 @@
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     # Wraps all attributes and provides means to query them for single or multiple values.
     # 
     # For backwards compatibility Attributes#[] returns *first* value for the attribute.

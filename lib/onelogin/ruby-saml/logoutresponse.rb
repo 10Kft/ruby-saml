@@ -2,7 +2,7 @@ require "xml_security"
 require "time"
 
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     class Logoutresponse < SamlMessage
       # For API compability, this is mutable.
       attr_accessor :settings

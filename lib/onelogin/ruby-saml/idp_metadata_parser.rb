@@ -6,7 +6,7 @@ require "rexml/document"
 require "rexml/xpath"
 
 module OneLogin
-  module RubySaml
+  module RubySamlFrozen081
     include REXML
 
     class IdpMetadataParser
@@ -24,7 +24,7 @@ module OneLogin
       def parse(idp_metadata)
         @document = REXML::Document.new(idp_metadata)
 
-        OneLogin::RubySaml::Settings.new.tap do |settings|
+        OneLogin::RubySamlFrozen081::Settings.new.tap do |settings|
 
           settings.idp_sso_target_url = single_signon_service_url
           settings.idp_slo_target_url = single_logout_service_url
