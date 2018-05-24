@@ -1,4 +1,4 @@
-require "xml_security"
+require "xml_security-frozen-081"
 require "time"
 
 module OneLogin
@@ -25,7 +25,7 @@ module OneLogin
 
         @options = options
         @response = decode_raw_saml(response)
-        @document = XMLSecurity::SignedDocument.new(@response)
+        @document = XMLSecurityFrozen081::SignedDocument.new(@response)
       end
 
       def validate!

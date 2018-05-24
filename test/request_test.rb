@@ -166,8 +166,8 @@ class RequestTest < Test::Unit::TestCase
         settings.idp_sso_target_url = "http://example.com?field=value"
         settings.security[:authn_requests_signed] = true
         settings.security[:embed_sign] = true
-        settings.security[:signature_method] = XMLSecurity::Document::SHA256
-        settings.security[:digest_method] = XMLSecurity::Document::SHA512
+        settings.security[:signature_method] = XMLSecurityFrozen081::Document::SHA256
+        settings.security[:digest_method] = XMLSecurityFrozen081::Document::SHA512
         settings.certificate  = ruby_saml_cert_text
         settings.private_key = ruby_saml_key_text
 
@@ -188,19 +188,19 @@ class RequestTest < Test::Unit::TestCase
         settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
         settings.security[:authn_requests_signed] = true
         settings.security[:embed_sign] = false
-        settings.security[:signature_method] = XMLSecurity::Document::SHA1
+        settings.security[:signature_method] = XMLSecurityFrozen081::Document::SHA1
         settings.certificate  = ruby_saml_cert_text
         settings.private_key = ruby_saml_key_text
 
         params = OneLogin::RubySamlFrozen081::Authrequest.new.create_params(settings)
         assert params['Signature']
-        assert params['SigAlg'] == XMLSecurity::Document::SHA1
+        assert params['SigAlg'] == XMLSecurityFrozen081::Document::SHA1
 
         # signature_method only affects the embedeed signature
-        settings.security[:signature_method] = XMLSecurity::Document::SHA256
+        settings.security[:signature_method] = XMLSecurityFrozen081::Document::SHA256
         params = OneLogin::RubySamlFrozen081::Authrequest.new.create_params(settings)
         assert params['Signature']
-        assert params['SigAlg'] == XMLSecurity::Document::SHA1
+        assert params['SigAlg'] == XMLSecurityFrozen081::Document::SHA1
       end
     end
 

@@ -1,4 +1,4 @@
-require "xml_security"
+require "xml_security-frozen-081"
 require "time"
 require "nokogiri"
 
@@ -26,11 +26,11 @@ module OneLogin
         raise ArgumentError.new("Response cannot be nil") if response.nil?
         @options  = options
         @response = decode_raw_saml(response)
-        @document = XMLSecurity::SignedDocument.new(@response, @errors)
+        @document = XMLSecurityFrozen081::SignedDocument.new(@response, @errors)
 
         # Marshal at Ruby 1.8.7 throw an Exception
         if RUBY_VERSION < "1.9"
-          @original_document = XMLSecurity::SignedDocument.new(@response, @errors)
+          @original_document = XMLSecurityFrozen081::SignedDocument.new(@response, @errors)
         else
           @original_document = Marshal.load(Marshal.dump(@document))
         end
@@ -274,7 +274,7 @@ module OneLogin
             response = REXML::XPath.first(document, "/samlp:Response/", { "samlp" => PROTOCOL })
             response.add(decrypt_assertion_document)
             encrypted_element.remove
-            XMLSecurity::SignedDocument.new(document.to_s)
+            XMLSecurityFrozen081::SignedDocument.new(document.to_s)
           else
             document
           end

@@ -2,7 +2,7 @@ require "rexml/document"
 require "rexml/xpath"
 require "uri"
 
-require "onelogin/ruby-saml/logging"
+require "onelogin/ruby-saml-frozen-081/logging"
 
 # Class to return SP metadata based on the settings requested.
 # Return this XML in a controller, then give that URL to the the
